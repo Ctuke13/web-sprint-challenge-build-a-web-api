@@ -18,13 +18,7 @@ async function checkProjectId(req, res, next) {
 }
 
 async function checkProject(req, res, next) {
-  const { id, name, notes, completed } = req.body;
-
-  if (!id || typeof id !== "number") {
-    return res
-      .status(400)
-      .json({ message: "The project id is required and must be a number." });
-  }
+  const { id, name, description, completed } = req.body;
 
   if (!name || typeof name !== "string") {
     return res.status(400).json({
