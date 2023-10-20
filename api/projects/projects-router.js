@@ -4,7 +4,7 @@ const { checkProject, checkProjectId } = require("./projects-middleware");
 const Projects = require("./projects-model");
 const router = express.Router();
 
-router.get("/id?", checkProjectId, (req, res, next) => {
+router.get("/:id?", checkProjectId, (req, res, next) => {
   res.json(req.action);
 });
 
